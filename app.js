@@ -21,7 +21,8 @@ function startScan() {
                 method: 'POST',
                 body: JSON.stringify(payload)
             }).then(res => res.text()).then(txt => {
-                document.getElementById('output').innerText = 'Gesendet: ' + txt;
+                document.getElementById('output').innerText = `${timestamp}
+${barcode}`;
             });
         });
     });
