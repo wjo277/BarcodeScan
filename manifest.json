@@ -5,6 +5,6 @@
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#ffffff",
-  "description": "PWA zur Barcode-Erfassung und Geosuche",
+  "description": "PWA zur Barcode-Erfassung und Geosuche mit Feedback",
   "icons": []
 }

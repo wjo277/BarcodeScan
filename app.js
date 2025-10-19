@@ -3,6 +3,16 @@ let selectedDeviceId;
 const codeReader = new ZXing.BrowserMultiFormatReader();
 let map;
 
+function showFeedback() {
+    const beep = document.getElementById('beep');
+    const feedback = document.getElementById('feedback');
+    beep.play();
+    feedback.style.display = 'block';
+    setTimeout(() => {
+        feedback.style.display = 'none';
+    }, 1000);
+}
+
 function startScan() {
     codeReader.decodeOnceFromVideoDevice(selectedDeviceId, 'video').then(result => {
         const barcode = result.text;
@@ -23,6 +33,7 @@ function startScan() {
             }).then(res => res.text()).then(txt => {
                 document.getElementById('output').innerText = `${timestamp}
 ${barcode}`;
+                showFeedback();
             });
         });
     });
