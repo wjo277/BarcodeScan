@@ -1,0 +1,10 @@
+
+{
+  "name": "Barcode Erfassung",
+  "short_name": "BarcodeApp",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "description": "PWA zur Barcode-Erfassung mit Geolocation und Timestamp",
+  "icons": []
+}
