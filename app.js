@@ -60,5 +60,6 @@ function searchEntries() {
 }
 
 codeReader.listVideoInputDevices().then(videoInputDevices => {
-    selectedDeviceId = videoInputDevices[0].deviceId;
+    const backCamera = videoInputDevices.find(device => device.label.toLowerCase().includes('back'));
+    selectedDeviceId = backCamera ? backCamera.deviceId : videoInputDevices[0].deviceId;
 });
