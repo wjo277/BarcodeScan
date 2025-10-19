@@ -4,17 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barcode Erfassung</title>
+    <title>Barcode Erfassung & Suche</title>
     <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        body { margin: 0; font-family: sans-serif; }
+        video { width: 100vw; height: 40vh; object-fit: cover; }
+        #map { height: 50vh; width: 100vw; }
+        #controls { padding: 10px; }
+        button, input { margin: 5px; padding: 10px; font-size: 16px; }
+    </style>
     <script src="https://unpkg.com/@zxing/library@latest"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
-    <h1>Barcode Erfassung</h1>
-    <video id="video" width="300" height="200"></video>
-    <button onclick="startScan()">Scan starten</button>
-    <button onclick="scanConfig()">Konfiguration scannen</button>
-    <p id="output"></p>
-
+    <video id="video"></video>
+    <div id="controls">
+        <button onclick="startScan()">Scan starten</button>
+        <button onclick="scanConfig()">Konfiguration</button>
+        <input type="text" id="searchValue" placeholder="Suchbegriff">
+        <button onclick="searchEntries()">Suche</button>
+        <p id="output"></p>
+    </div>
+    <div id="map"></div>
     <script src="app.js"></script>
 </body>
 </html>
